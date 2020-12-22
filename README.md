@@ -29,8 +29,8 @@ MVVM-NY-Times-Most-Popular-Articles-Android is MVVM sample project which shows p
 ## UI Testing Screenshot
 
 
-<img src="UI_Unit_Test_Case_1.png" width="250"/>
-<img src="UI_Unit_Test_Case_2.png" width="250"/>
+<img src="UI_Unit_Test_Case_1.png"/>
+<img src="UI_Unit_Test_Case_2.png"/>
 
 
 
@@ -51,9 +51,9 @@ Then you can find it at  `app\build\reports\coverage\debug\index.html`
 ## Sonarqube code report
 
 
-<img src="Sonar_Report.png" width="200"/>
-<img src="Sonar_Report_1.png" width="200"/>
-<img src="Sonar_Report_2.png" width="200"/>
+<img src="Sonar_Report.png"/>
+<img src="Sonar_Report_1.png"/>
+<img src="Sonar_Report_2.png"/>
 
 
 
