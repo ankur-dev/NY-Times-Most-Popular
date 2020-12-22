@@ -29,7 +29,8 @@ MVVM-NY-Times-Most-Popular-Articles-Android is MVVM sample project which shows p
 ## UI Testing Screenshot
 
 
-<img src="UITestScreenshot.png"/>
+<img src="UI_Unit_Test_Case_1.png" width="250"/>
+<img src="UI_Unit_Test_Case_2.png" width="250"/>
 
 
 
@@ -44,7 +45,7 @@ MVVM-NY-Times-Most-Popular-Articles-Android is MVVM sample project which shows p
 A coverage report can be generated using `gradlew createDebugCoverageReport`command-line via Gradle
 Then you can find it at  `app\build\reports\coverage\debug\index.html`
 
-<img src="CoverageReportScreenshot.png"/>
+<img src="Test_Case_Coverage.png"/>
 
 
 Build the project from the command-line
