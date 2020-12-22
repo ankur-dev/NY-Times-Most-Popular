@@ -48,6 +48,15 @@ Then you can find it at  `app\build\reports\coverage\debug\index.html`
 <img src="Test_Case_Coverage.png"/>
 
 
+## Sonarqube code report
+
+
+<img src="Sonar_Report.png" width="200"/>
+<img src="Sonar_Report_1.png" width="200"/>
+<img src="Sonar_Report_2.png" width="200"/>
+
+
+
 Build the project from the command-line
 
  ```sh
