@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">XebiaAssigenment</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_server">Oops! Something went wrong, Please try again.</string>
+    <string name="no_internet">Internet connection not available. Check your internet connection and try again.</string>
+    <string name="one_day">1 Day</string>
+    <string name="seven_days">7 Days</string>
+    <string name="thirty_days">30 Days</string>
+    <string name="created_by">Created By</string>
+    <string name="source">Source</string>
+    <string name="article_image">Article Image</string>
+    <string name="arrow_image">Arrow Image</string>
+</resources>

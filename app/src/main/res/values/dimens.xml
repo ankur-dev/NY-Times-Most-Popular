@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="article_item_padding">10dp</dimen>
+    <dimen name="article_detail_padding">15dp</dimen>
+    <dimen name="article_item_height">130dp</dimen>
+    <dimen name="article_image_height_width">35dp</dimen>
+    <dimen name="app_bar_height">210dp</dimen>
+</resources>

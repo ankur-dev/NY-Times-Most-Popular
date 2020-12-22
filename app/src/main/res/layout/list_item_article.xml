@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="articleItem"
+            type="com.xebia.assigenment.data.model.ResultsItem" />
+
+        <variable
+            name="imgUrl"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/article_item_height"
+        android:padding="@dimen/article_item_padding"
+        android:layout_marginTop="7dp">
+
+        <com.xebia.assigenment.views.CircleImageView
+            android:id="@+id/imgArticle"
+            android:layout_width="@dimen/article_image_height_width"
+            android:layout_height="@dimen/article_image_height_width"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            imageUrl="@{imgUrl}"
+            android:contentDescription="@string/article_image"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgArticle"
+            app:layout_constraintEnd_toStartOf="@+id/imgArrow"
+            android:maxLines="2"
+            android:paddingStart="10dp"
+            android:paddingEnd="2dp"
+            android:textSize="14sp"
+            android:text='@{articleItem.title??""}'
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintEnd_toStartOf="@+id/imgArrow"
+            app:layout_constraintStart_toEndOf="@+id/imgArticle"
+            android:maxLines="2"
+            android:layout_marginTop="8dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="2dp"
+            android:textSize="13sp"
+            android:text='@{articleItem.jsonMemberAbstract??""}'
+            android:textColor="@color/colorGrey" />
+
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_arrow_right"
+            android:contentDescription="@string/arrow_image"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            app:layout_constraintEnd_toStartOf="@+id/imgArrow"
+            android:maxLines="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:text='@{articleItem.publishedDate??""}'
+            android:drawablePadding="10dp"
+            android:textColor="@color/colorGrey"
+            app:drawableStartCompat="@drawable/calendar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
