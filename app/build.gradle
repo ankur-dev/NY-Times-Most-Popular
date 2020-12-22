@@ -10,8 +10,8 @@ apply plugin: 'org.sonarqube'
 sonarqube {
     sonarqube {
         properties {
-            property "sonar.projectName", "SonarQubeSample"
-            property "sonar.projectKey", "SonarQubeSample"
+            property "sonar.projectName", "NY Times Popular"
+            property "sonar.projectKey", "NYTimesPopularSample"
             property "sonar.host.url", "http://localhost:9000"
             property "sonar.projectVersion", "1.0"
             property "sonar.language", "Kotlin"
@@ -34,7 +34,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.xebia.assigenment"
+        applicationId "com.nytimespopular.assigenment"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

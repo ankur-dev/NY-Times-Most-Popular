@@ -5,7 +5,7 @@
     <data>
         <variable
             name="articleItem"
-            type="com.xebia.assigenment.data.model.ResultsItem" />
+            type="com.nytimespopular.assigenment.data.model.ResultsItem" />
 
         <variable
             name="imgUrl"
@@ -19,7 +19,7 @@
         android:padding="@dimen/article_item_padding"
         android:layout_marginTop="7dp">
 
-        <com.xebia.assigenment.views.CircleImageView
+        <com.nytimespopular.assigenment.views.CircleImageView
             android:id="@+id/imgArticle"
             android:layout_width="@dimen/article_image_height_width"
             android:layout_height="@dimen/article_image_height_width"

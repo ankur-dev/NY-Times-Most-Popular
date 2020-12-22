@@ -41,7 +41,7 @@ print_blue "installDebug...\n"
 print_blue "\n\n\n Done Installing\n"
 
 #Launch Main Activity
-adb shell am start -n "com.xebia.assigenment/com.xebia.assigenment.HomeActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+adb shell am start -n "nytimespopular.assigenment/nytimespopular.assigenment.HomeActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
 
 print_blue "\n\n\n Launched main activity\n"
 

@@ -4,10 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-<!--        <variable-->
-<!--            name="adapter"-->
-<!--            type="com.xebia.assigenment.ui.adapter.ArticleItemListAdapter" />-->
-
         <variable
             name="isLoading"
             type="Boolean" />
