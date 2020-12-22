@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.xebia.assigenment.R
 import com.xebia.assigenment.base.BaseFragment
 import com.xebia.assigenment.data.model.ResultsItem
@@ -110,7 +111,8 @@ class ArticlesListFragment : BaseFragment() {
 
             })
 
-        mBinding.adapter = mAdapter
+        mBinding.rvArticleList.adapter = mAdapter
+        mBinding.rvArticleList.layoutManager = LinearLayoutManager(activity)
     }
 
     companion object {

@@ -20,8 +20,8 @@ MVVM-NY-Times-Most-Popular-Articles-Android is MVVM sample project which shows p
 
 
 <p>
-<img src="Screenshot1.png" width="200"/>
-<img src="Screenshot2.png" width="200"/>
+<img src="Screenshot1.png" width="250"/>
+<img src="Screenshot2.png" width="250"/>
 </p>
 
 
@@ -45,5 +45,38 @@ A coverage report can be generated using `gradlew createDebugCoverageReport`comm
 Then you can find it at  `app\build\reports\coverage\debug\index.html`
 
 <img src="CoverageReportScreenshot.png"/>
+
+
+Build the project from the command-line
+
+ ```sh
+ $ git clone https://github.com/ankur-dev/NY-Times-Most-Popular.git
+ $ cd NYTimesMostPopular
+ $ ./gradlew clean assembleDebug
+ ```
+
+ Run static code analysis such as linting. The result will generate on path "app/build/reports/lint-results.html"
+
+  ```sh
+  $ ./gradlew clean lint
+  ```
+
+  Run unit tests.
+
+   ```sh
+   $ ./gradlew clean test
+   ```
+
+  Run Connected Android Test. Make sure mobile device or emulator connected to machine.
+
+   ```sh
+   $ ./gradlew clean connectedAndroidTest
+   ```
+
+   All Tasks in a single command line. The reports and apk will generate in "app/build/*" repository.
+
+   ```sh
+   $ ./gradlew clean test connectedAndroidTest lint assembleDebug
+   ```
 
 

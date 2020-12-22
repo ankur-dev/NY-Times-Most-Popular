@@ -116,7 +116,7 @@ class TestUtills {
             "}"
 
 
-    fun getArticles(): Response {
+    fun getArticles(): Response? {
         return ParseUtil.getObject(string, Response::class.java)
     }
 

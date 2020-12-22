@@ -9,7 +9,11 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-//        classpath "org.jacoco:org.jacoco.core:0.8.5"
+    //    classpath "org.jacoco:org.jacoco.core:0.8.5"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6"
+//        classpath "com.hiya:jacoco-android:0.2"
+ //       classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.8.0'
+
 
 
         // Koin dependency
@@ -29,3 +33,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//apply plugin: 'com.vanniktech.android.junit.jacoco'
