@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu
 import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
@@ -12,11 +13,11 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import com.nytimespopular.assigenment.data.network.Task
 import com.nytimespopular.assigenment.ui.HomeActivity
 import com.nytimespopular.assigenment.ui.fragments.ArticleDetailFragment
@@ -130,6 +131,13 @@ class ExampleInstrumentedTest : KoinTest{
         changeFragment()
         onView(withId(R.id.created_by_title_des)).check(matches(isDisplayed()))
 
+    }
+
+    @Test
+    fun testMenuClick(){
+        // Click menu
+        openActionBarOverflowOrOptionsMenu(getInstrumentation().targetContext)
+        onView(withText("7 Days")).perform(click())
     }
 
     fun changeFragment(){
