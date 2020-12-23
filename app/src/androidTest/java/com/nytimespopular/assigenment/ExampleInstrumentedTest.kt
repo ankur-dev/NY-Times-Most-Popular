@@ -55,8 +55,6 @@ class ExampleInstrumentedTest : KoinTest{
 
     @Before
     fun registerIdlingResource() {
-//        IdlingRegistry.getInstance()
-//            .register(CountingIdlingResourceSingleton.countingIdlingResource)
         activityRule.scenario.onActivity {
             it.supportFragmentManager.beginTransaction().replace(
                 R.id.fragmentContainer, ArticlesListFragment.newInstance(true),
@@ -70,8 +68,6 @@ class ExampleInstrumentedTest : KoinTest{
 
     @After
     fun unregisterIdlingResource() {
-        IdlingRegistry.getInstance()
-            .unregister(CountingIdlingResourceSingleton.countingIdlingResource)
     }
 
 
