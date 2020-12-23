@@ -12,13 +12,12 @@ import androidx.test.espresso.ViewAction
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import com.nytimespopular.assigenment.data.network.Task
+import com.nytimespopular.assigenment.testutils.DataBindingIdlingResourceRule
 import com.nytimespopular.assigenment.ui.HomeActivity
 import com.nytimespopular.assigenment.ui.fragments.ArticleDetailFragment
 import com.nytimespopular.assigenment.ui.fragments.ArticlesListFragment
@@ -45,6 +44,9 @@ class ExampleInstrumentedTest : KoinTest{
     var activityRule: ActivityScenarioRule<HomeActivity> =
         ActivityScenarioRule(HomeActivity::class.java)
 
+    @Rule
+    @JvmField
+    val dataBindingIdlingResourceRule = DataBindingIdlingResourceRule(activityRule)
 
 
     fun withRecyclerView(recyclerViewId: Int): RecyclerViewMatcher {
@@ -53,8 +55,8 @@ class ExampleInstrumentedTest : KoinTest{
 
     @Before
     fun registerIdlingResource() {
-        IdlingRegistry.getInstance()
-            .register(CountingIdlingResourceSingleton.countingIdlingResource)
+//        IdlingRegistry.getInstance()
+//            .register(CountingIdlingResourceSingleton.countingIdlingResource)
         activityRule.scenario.onActivity {
             it.supportFragmentManager.beginTransaction().replace(
                 R.id.fragmentContainer, ArticlesListFragment.newInstance(true),
@@ -76,7 +78,7 @@ class ExampleInstrumentedTest : KoinTest{
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext: Context = InstrumentationRegistry.getInstrumentation().targetContext
+        val appContext: Context = getInstrumentation().targetContext
         assertEquals(
             "com.nytimespopular.assigenment",
             appContext.packageName
@@ -117,7 +119,8 @@ class ExampleInstrumentedTest : KoinTest{
 
     @Test
     fun testRecyclerViewItemClick() {
-        Thread.sleep(1000)
+        onView(withId(R.id.rvArticleList)).check(matches(isDisplayed()))
+        Thread.sleep(5000)
         onView(withId(R.id.rvArticleList)).
         perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>
             (0, ClickOnButtonView()))
@@ -140,7 +143,7 @@ class ExampleInstrumentedTest : KoinTest{
         onView(withText("7 Days")).perform(click())
     }
 
-    fun changeFragment(){
+    private fun changeFragment(){
         IdlingRegistry.getInstance()
             .register(CountingIdlingResourceSingleton.countingIdlingResource)
         activityRule.scenario.onActivity {
@@ -174,8 +177,10 @@ class ExampleInstrumentedTest : KoinTest{
     fun setTextInTextView(value: String): ViewAction {
         return object : ViewAction {
             override fun getConstraints(): Matcher<View> {
-                return CoreMatchers.allOf(ViewMatchers.isDisplayed(), ViewMatchers.isAssignableFrom(
-                    TextView::class.java))
+                return CoreMatchers.allOf(
+                    isDisplayed(), isAssignableFrom(
+                    TextView::class.java)
+                )
             }
 
             override fun perform(uiController: UiController, view: View) {
